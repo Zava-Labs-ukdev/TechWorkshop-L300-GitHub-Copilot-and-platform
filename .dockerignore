@@ -1,0 +1,10 @@
+**/.git
+**/.gitignore
+**/README.md
+**/docs
+**/media
+infra
+.github
+**/.vs
+**/bin
+**/obj
