@@ -39,7 +39,7 @@ You do not need Docker installed locally. Container images are built and pushed 
 ### Prerequisites
 - [Azure CLI](https://learn.microsoft.com/en-us/cli/azure/install-azure-cli)
 - [Azure Developer CLI (azd)](https://learn.microsoft.com/en-us/azure/developer/azure-developer-cli/install-azd)
-- .NET 6 SDK (for local development only)
+- .NET 10 SDK (for local development only)
 
 ### 1. Authenticate
 ```bash
