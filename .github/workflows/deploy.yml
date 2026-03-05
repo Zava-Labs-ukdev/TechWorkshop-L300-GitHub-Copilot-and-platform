@@ -24,7 +24,7 @@ jobs:
       - name: Build and push image to ACR
         run: |
           az acr build \
-            --registry ${{ vars.ACR_NAME }} \
+            --registry ${{ vars.AZURE_CONTAINER_REGISTRY_NAME }} \
             --image zava-storefront:${{ github.sha }} \
             --image zava-storefront:latest \
             .
@@ -33,6 +33,6 @@ jobs:
         if: github.ref == 'refs/heads/main' || github.event_name == 'workflow_dispatch'
         run: |
           az webapp config container set \
-            --name ${{ vars.AZURE_WEBAPP_NAME }} \
+            --name ${{ vars.AZURE_APP_SERVICE_NAME }} \
             --resource-group ${{ vars.AZURE_RESOURCE_GROUP }} \
-            --container-image-name ${{ vars.ACR_NAME }}.azurecr.io/zava-storefront:${{ github.sha }}
+            --container-image-name ${{ vars.AZURE_CONTAINER_REGISTRY_NAME }}.azurecr.io/zava-storefront:${{ github.sha }}
